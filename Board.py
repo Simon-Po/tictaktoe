@@ -1,3 +1,4 @@
+import random
 class Board:
     
     board = [[],[],[]]
@@ -66,3 +67,13 @@ class Board:
     def clear(self):
         for arr in self.board:
             arr = [" "," "," "]
+    
+    def make_move(self):
+        if self.player_turn == 1:
+            return
+        empty_squares = []
+        for x in range(len(self.board)):
+            for y in range(len(self.board)):
+                if self.board[x][y] == " ":
+                    empty_squares.append((x,y))
+        self.update(random.choice(empty_squares))

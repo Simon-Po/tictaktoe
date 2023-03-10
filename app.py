@@ -98,6 +98,22 @@ while True:
                 pygame.quit()
                 sys.exit()
                 
+            board.make_move()
+            board.evaluate()
+            screen.fill(COLOR_BACKGROUND)
+            draw_board()
+            display_players(board)
+            pygame.display.update()
+            board.evaluate()
+            if board.player1_won :
+                print("Player 1 Won")
+                pygame.quit()
+                sys.exit()
+                
+            elif board.player2_won :
+                print("Player 2 Won") 
+                pygame.quit()
+                sys.exit()
                 
     
 
